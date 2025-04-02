@@ -1,0 +1,27 @@
+// ----------------THEMES--------------------------------------------------------------------------
+@mixin theme_white {
+    color: #707070 !important;
+    background-color: #ffffff !important;
+  }
+@mixin theme_crimson {
+  color: #ffffff !important;
+  background-color: #e32359 !important;
+}
+@mixin theme_aqua {
+  color: #ffffff !important;
+  background-color: #00798a !important;
+}
+@mixin theme_aqua_light {
+    color: #00798a !important;
+    background-color: #f2f8f9 !important;
+  }
+// ----------------ELEMENTS------------------------------------------------------------------------
+
+@mixin btn {
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

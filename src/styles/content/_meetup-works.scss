@@ -1,0 +1,32 @@
+@use "../variables";
+@use "../mixins";
+
+
+.meetup-works_padding {
+  padding: clamp(40px, 10%, 80px) 0;
+}
+
+.meetup-works__cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  @media (max-width: 992px) {
+    flex-wrap: wrap;
+  }
+}
+
+.meetup-works-card {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  background-color: variables.$aqua_light_clr;
+  .meetup-works-card__icon {
+    color: variables.$aqua_clr;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  .meetup-works-card__info {
+    margin: 1rem 0;
+  }
+}

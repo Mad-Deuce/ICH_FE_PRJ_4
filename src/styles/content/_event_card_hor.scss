@@ -1,0 +1,44 @@
+@use "../variables";
+@use "../mixins";
+
+.events-near-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.event-card__hor {
+  flex-direction: row !important;
+  border-top: 0.6px solid variables.$border_clr;
+  padding-top: 0.8rem;
+  .event-card__img {
+    width: 30%;
+  }
+  .event-card__info {
+    grid-template-areas: "card-date" "card-title" "card-category" "card-going" "card-online" "card-attendees";
+  }
+  .event-card__title {
+    // line-height: 1.23rem;
+    line-height: 1.7rem;
+    margin: 0.5rem 0;
+  }
+  .event-card__category {
+    margin: 0.5rem 0;
+  }
+  .event-card__date {
+    margin: 0;
+    color: #7c6f50;
+  }
+  .event-card__going_visible {
+    display: none;
+  }
+  .event-card__online_hide {
+    display: flex;
+  }
+  .event-card__attendees {
+    margin-top: 2rem;
+  }
+  .event-card__attendees_hide {
+    display: flex;
+  }
+}

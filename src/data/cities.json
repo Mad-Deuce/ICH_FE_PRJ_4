@@ -1,0 +1,22 @@
+[
+  {
+    "title": "New York",
+    "icon": "/src/assets/images/cities/1.png"
+  },
+  {
+    "title": "San Francisco",
+    "icon": "/src/assets/images/cities/2.png"
+  },
+  {
+    "title": "Chicago",
+    "icon": "/src/assets/images/cities/3.png"
+  },
+  {
+    "title": "Nashville",
+    "icon": "/src/assets/images/cities/4.png"
+  },
+  {
+    "title": "Miami",
+    "icon": "/src/assets/images/cities/5.png"
+  }
+]

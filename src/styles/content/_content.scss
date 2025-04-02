@@ -1,0 +1,33 @@
+@use "../mixins";
+@use "../variables";
+
+@use "join-meetup";
+@use "events";
+@use "categories";
+@use "cities";
+@use "meetup-works";
+@use "friendships";
+
+.content {
+  max-width: 1296px;
+  width: 95%;
+  margin: 0 auto;
+  a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: variables.$aqua_clr;
+    text-decoration: none;
+  }
+}
+
+.content__btn {
+  @include mixins.btn;
+}
+.content__btn_teal {
+  @include mixins.theme_aqua;
+  text-decoration: none !important;
+}
+.content__btn_crimson {
+  @include mixins.theme_crimson;
+  text-decoration: none !important;
+}

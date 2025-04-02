@@ -1,0 +1,306 @@
+@use "../variables";
+@use "../mixins";
+@use "event_card_hor";
+
+.events_padding {
+  padding: clamp(40px, 10%, 80px) 0;
+}
+
+.events-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.events-title__left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  * {
+    text-wrap: nowrap;
+  }
+}
+
+.events-search {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  @include mixins.theme_aqua_light;
+  border-radius: 12px;
+  input {
+    @include mixins.theme_aqua_light;
+    outline: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    border: none;
+    min-width: 0;
+    width: 100%;
+
+    &::-webkit-calendar-picker-indicator {
+      opacity: 0;
+    }
+  }
+  span {
+    font-variation-settings: "FILL" 1, "wght" 200, "GRAD" 100, "opsz" 24;
+    cursor: pointer;
+  }
+}
+
+.events-all-href_visible {
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+// ------------------------------------------------------------------------------------------------
+
+.events-near {
+  padding: clamp(40px, 10%, 80px) 0;
+  display: grid;
+  grid-template-columns: 1fr 0.4fr 0.6fr;
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.events-near__right {
+  margin-block: 2rem;
+  div {
+    position: relative;
+    margin-top: 2rem;
+    iframe {
+      width: 100%;
+      filter: blur(2px);
+      height: 300px;
+    }
+
+    .modal {
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0);
+      width: 100%;
+      height: 305px;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include mixins.btn;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      color: variables.$aqua_clr;
+      border-color: variables.$aqua_clr;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    & > span {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      color: variables.$aqua_clr;
+      font-size: 1rem;
+      background-color: variables.$white_clr;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.events-near__left {
+  a {
+    text-decoration: underline !important;
+  }
+}
+
+.events-near__middle_visible {
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+.events-near__right_visible {
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+// ------------------------------------------------------------------------------------------------
+
+.events-near__filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  select {
+    flex: 1 1 40%;
+    font-size: 1rem;
+    font-weight: 600;
+    align-items: center;
+    text-align: center;
+    text-wrap: wrap;
+    padding: 1rem;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background-color: variables.$white_clr;
+
+    cursor: pointer;
+    color: variables.$black_clr;
+    appearance: base-select;
+    &::picker-icon {
+      content: url(/src/assets/icons/keyboard_arrow_down_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg);
+    }
+  }
+}
+
+// ------------------------------------------------------------------------------------------------
+
+.events-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+.event-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  @media (max-width: 992px) {
+    flex-direction: row;
+    border-top: 0.6px solid variables.$border_clr;
+    padding-top: 0.8rem;
+  }
+}
+.event-card__img {
+  width: 100%;
+  height: fit-content;
+  border-radius: 16px;
+  @media (max-width: 992px) {
+    width: 30%;
+  }
+}
+.event-card__info {
+  display: grid;
+  grid-template-areas: "card-title" "card-category" "card-date" "card-going" "card-online" "card-attendees";
+  @media (max-width: 992px) {
+    grid-template-areas: "card-date" "card-title" "card-category" "card-going" "card-online" "card-attendees";
+  }
+}
+
+.event-card__title {
+  grid-area: card-title;
+  line-height: 1.5rem;
+  @media (max-width: 992px) {
+    line-height: 1.23rem;
+    margin: 0.5rem 0;
+  }
+}
+
+.event-card__category {
+  grid-area: card-category;
+  font-size: 0.88rem;
+  margin: 1rem 0;
+  color: variables.$grey_clr;
+  @media (max-width: 992px) {
+    margin: 0.5rem 0;
+  }
+}
+
+.event-card__date {
+  grid-area: card-date;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  color: variables.$black_clr;
+  font-weight: 500;
+  p {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+  }
+  span {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 992px) {
+    margin: 0;
+    color: #7c6f50;
+  }
+}
+
+.event-card__going {
+  grid-area: card-going;
+  display: flex;
+  gap: 2rem;
+  color: variables.$black_clr;
+  font-size: 1rem;
+  & > div {
+    display: flex;
+    gap: 0.5rem;
+  }
+  span {
+    font-variation-settings: "FILL" 0, "wght" 100, "GRAD" 200, "opsz" 24;
+  }
+}
+.event-card__going_visible {
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+.event-card__online {
+  grid-area: card-online;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: variables.$grey_clr;
+  p {
+    font-size: 0.81rem;
+  }
+  span {
+    font-variation-settings: "FILL" 1, "wght" 0, "GRAD" 0, "opsz" 24;
+  }
+}
+.event-card__online_hide {
+  display: none;
+  @media (max-width: 992px) {
+    display: flex;
+  }
+}
+.event-card__attendees {
+  grid-area: card-attendees;
+  color: variables.$grey_clr;
+  @media (max-width: 992px) {
+    margin-top: 2rem;
+  }
+}
+.event-card__attendees_hide {
+  display: none;
+  @media (max-width: 992px) {
+    display: flex;
+  }
+}
+
+// ------------------------------------------------------------------------------------------------
+
+.event-card__error {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 2rem;
+  font-weight: 600;
+  color: variables.$grey_clr;
+}

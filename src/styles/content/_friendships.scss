@@ -1,0 +1,46 @@
+@use "../variables";
+@use "../mixins";
+
+.friendships {
+  .friendships__info {
+    max-width: 80%;
+    color: variables.$grey_clr;
+    margin: 1rem 0;
+  }
+  
+  .friendships__info_visible {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+}
+
+.friendships__cards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.friendships-card {
+  .friendships-card__img {
+    width: 100%;
+  }
+  .friendships-card__title {
+    max-width: 80%;
+    margin: 1rem 0;
+    color: variables.$black_clr;
+  }
+  .friendships-card__description {
+    color: variables.$grey_clr;
+  }
+  .friendships-card__link {
+    display: block;
+    margin: 1rem 0;
+  }
+}

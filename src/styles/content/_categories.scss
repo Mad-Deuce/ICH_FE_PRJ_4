@@ -1,0 +1,29 @@
+@use "../variables";
+@use "../mixins";
+
+.categories_padding {
+  padding: clamp(40px, 10%, 80px) 0;
+}
+
+.categories__cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(8, 1fr);
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  :nth-child(1n + 9) {
+    display: none;
+  }
+}
+
+.category__card {
+  text-align: center;
+  padding: 1rem;
+  p {
+    color: variables.$black_clr;
+  }
+}

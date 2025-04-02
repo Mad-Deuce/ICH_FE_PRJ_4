@@ -1,0 +1,10 @@
+@use "reset";
+@use "navbar/navbar";
+@use "content/content";
+@use "footer/footer";
+
+.page {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0px;
+}

@@ -1,0 +1,36 @@
+@use "../variables";
+
+.cities {
+  .cities__info {
+    color: variables.$grey_clr;
+    margin: 1rem 0;
+  }
+  .cities__cards {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+      :nth-child(1n + 5) {
+        display: none;
+      }
+    }
+  }
+}
+
+.city-card {
+  text-align: center;
+  .city-card__img {
+    max-width: 100%;
+    border-radius: 50%;
+  }
+  .city-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: variables.$black_clr;
+    margin: 1rem 0;
+  }
+}

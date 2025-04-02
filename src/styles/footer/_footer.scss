@@ -1,0 +1,85 @@
+@use "../variables";
+@use "../mixins";
+
+
+.footer {
+  margin: 0 auto;
+  margin-top: clamp(40px, 10%, 80px);
+  background-color: variables.$black_clr;
+  color: variables.$white_clr;
+  & > div {
+    max-width: 1296px;
+    width: 95%;
+    margin: 0 auto;
+    padding-block: 1.5rem;
+  }
+}
+
+.footer__head {
+  border-bottom: 1px solid variables.$grey_clr;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  button {
+    width: 7rem;
+    height: 2.5rem;
+    border: 2px solid variables.$white_clr;
+    border-radius: 8px;
+    color: variables.$white_clr;
+    background-color: variables.$black_clr;
+    text-decoration: none;
+  }
+}
+
+.footer__info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  line-height: 1.5rem;
+  h4 {
+    color: variables.$white_clr;
+  }
+  p {
+    color: variables.$white_darken_clr;
+    font-size: 0.875rem;
+    margin-block: 0.5rem;
+  }
+}
+
+.footer__follow {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+}
+.footer__follow-title {
+  margin-block: 1rem;
+}
+.footer__follow-imgs {
+  display: flex;
+  gap: clamp(1rem, 1rem, 2rem);
+  img {
+    width: 100%;
+  }
+}
+
+.footer__follow-imgs_visible {
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
+
+.footer__tail {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.875rem;
+  color: variables.$white_darken_clr;
+  :first-child {
+    color: #fff;
+  }
+}
+.footer__tail_visible {
+  @media (max-width: 992px) {
+    display: none;
+  }
+}

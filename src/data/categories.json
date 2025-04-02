@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Travel and Outdoor",
+    "icon": "/src/assets/images/categories/travel_and_outdoor.svg"
+  },
+  {
+    "title": "Social Activities",
+    "icon": "/src/assets/images/categories/social_activities.svg"
+  },
+  {
+    "title": "Hobbies and Passions",
+    "icon": "/src/assets/images/categories/hobbies_and_passions.svg"
+  },
+  {
+    "title": "Sports and Fitness",
+    "icon": "/src/assets/images/categories/sports_and_fitness.svg"
+  },
+  {
+    "title": "Health and Wellbeing",
+    "icon": "/src/assets/images/categories/health_and_wellness.svg"
+  },
+  {
+    "title": "Technology",
+    "icon": "/src/assets/images/categories/technology.svg"
+  },
+  {
+    "title": "Art and Culture",
+    "icon": "/src/assets/images/categories/art_and_culture.svg"
+  },
+  {
+    "title": "Games",
+    "icon": "/src/assets/images/categories/games.svg"
+  },
+  {
+    "title": "Business",
+    "icon": "/src/assets/images/categories/games.svg"
+  }
+]
