@@ -851,7 +851,7 @@ h3 {
 .page {
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0px;
+  padding: 8px 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

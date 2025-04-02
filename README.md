@@ -1,7 +1,7 @@
 ### Установка и запуск
 ```
 `npm install`
-`npm run start`
+`npm run dev`
 ```
 
 ### ТРЕБОВАНИЯ
