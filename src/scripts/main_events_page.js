@@ -1,9 +1,10 @@
-import events from '../data/events.json' with {type: "json"};
-import categories from '../data/categories.json' with {type: "json"};
-import { renderEventsCards } from './event_card_render.js';
-
 import moment from 'moment-timezone';
 
+import events from '../data/events.json' with {type: "json"};
+import categories from '../data/categories.json' with {type: "json"};
+import filterOptions from '../data/filterOptions.json' with {type: "json"};
+
+import { renderEventsCards } from './event_card_render.js';
 
 const citySearchParam = new URLSearchParams(window.location.search).get('city') || 'New York, NY';
 
@@ -38,7 +39,8 @@ function initFilters(city = "New York, NY") {
     const selectCategoryElem = document.querySelector('#events-near-category-select');
     const selectDateElem = document.querySelector('#events-near-date-select');
 
-    const typeOpts = ['Online', 'Offline'];
+    // const typeOpts = ['Online', 'Offline'];
+    const typeOpts = filterOptions.type;
     let selectOptions = selectTypeElem.options;
     selectOptions.add(new Option('Any type', '', true));
     typeOpts.map(item => {
@@ -48,7 +50,8 @@ function initFilters(city = "New York, NY") {
         renderEventsCardsByCities(citySearchParam);
     });
 
-    const distanceOpts = [5, 10, 15, 25, 50, 75, 100];
+    // const distanceOpts = [5, 10, 15, 25, 50, 75, 100];
+    const distanceOpts = filterOptions.distance;
     selectOptions = selectDistElem.options;
     selectOptions.add(new Option('Any distance', '', true));
     distanceOpts.map(item => {

@@ -2,6 +2,7 @@ import events from '../data/events.json' with {type: "json"};
 import categories from '../data/categories.json' with {type: "json"};
 import cities from '../data/cities.json' with {type: "json"};
 import friendships from '../data/friendships.json' with {type: "json"};
+
 import { renderEventsCards } from './event_card_render.js';
 import { renderCategoriesCards } from './category_card_render.js';
 import { renderCitiesCards } from './city_card_render.js';
